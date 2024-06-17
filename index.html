@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의집</title>
+    <link rel="stylesheet" href="./css/오늘의집.css">
+</head>
+<body>
+
+<input type="checkbox" id="ham_chk">
+
+<div id="wrap">
+    <header class="header">
+        <input type="radio" name="menu_rd" id="menu_rd1" checked>
+        <input type="radio" name="menu_rd" id="menu_rd2">
+        <input type="radio" name="menu_rd" id="menu_rd3">
+
+
+        <div class="h_top">
+            <div class="contents_area h_top_box">
+                <div class="h_top_L">
+                    <label for="ham_chk" class="btn_ham">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </label>
+
+                    <div class="logo">
+                        <a href="#" aria-label="오늘의집 로고입니다" >
+                            <!-- svg: inline 레벨
+                                     css로 width, height 를 건드리지 않고 해당 svg 속성의 width, height 를 조정할 수 있음. (이렇게 해도 되지만 scale 을 이용해도 됨)
+    
+                                * wai-aria 방식
+                                    aria-label: 해당 태그가 어떤 내용을 가지고 있는건지 각 태그의 속성으로 삽입해서 보조기기에 제공 -->
+                            <svg class="icon" width="74" height="30" viewBox="0 0 74 30" preserveAspectRatio="xMidYMid meet">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path fill="#000" d="M14.2 25.17H9.28V20.7a1.45 1.45 0 0 0-2.9 0v4.47H1.44a1.45 1.45 0 1 0 0 2.9H14.2a1.45 1.45 0 0 0 0-2.9M4.5 9.15c0-4.6 2.08-5.28 3.33-5.28 1.24 0 3.33.69 3.33 5.28v.36c0 4.6-2.09 5.28-3.33 5.28-1.25 0-3.34-.69-3.34-5.28v-.36zm3.33 8.54c3.84 0 6.23-3.13 6.23-8.18v-.36c0-5.05-2.39-8.18-6.23-8.18-3.85 0-6.24 3.13-6.24 8.18v.36c0 5.05 2.39 8.19 6.24 8.19zm25.54-7.34H17.81a1.45 1.45 0 0 0 0 2.9h15.56a1.45 1.45 0 1 0 0-2.9m-1.55 15.5c-7.08 1.83-9.45.79-10.14.25-.45-.35-.65-.8-.65-1.48v-.87h10.25c.8 0 1.46-.65 1.46-1.45v-5.08c0-.8-.66-1.45-1.46-1.45h-11.7a1.45 1.45 0 1 0 0 2.9h10.25v2.18H19.57c-.8 0-1.45.65-1.45 1.45v2.32a4.6 4.6 0 0 0 1.78 3.78c1.2.93 2.94 1.39 5.21 1.39 2.05 0 4.54-.38 7.44-1.13a1.45 1.45 0 1 0-.73-2.82M20.3 7.83h10.8a1.45 1.45 0 1 0 0-2.9h-9.35V1.45a1.45 1.45 0 1 0-2.9 0v4.93c0 .8.65 1.45 1.45 1.45"></path>
+                                    <rect width="3" height="15" x="70" fill="#000" rx="1.5"></rect>
+                                    <path fill="#000" d="M64.5 13.28a1.45 1.45 0 0 0 2.73-1c-.05-.13-1-2.68-3.38-4.5l3.7-4.1a1.45 1.45 0 0 0-1.09-2.42h-9.05a1.45 1.45 0 1 0 0 2.9h5.8l-6.88 7.64a1.45 1.45 0 1 0 2.16 1.95l3.41-3.8a8 8 0 0 1 2.6 3.33M69.56 26.52h-7.01a.82.82 0 0 1-.82-.82v-1.95h8.65v1.95c0 .45-.37.82-.82.82m2.27-9.37c-.8 0-1.45.65-1.45 1.45v2.25h-8.65V18.6a1.45 1.45 0 1 0-2.9 0v7.1a3.73 3.73 0 0 0 3.72 3.72h7.01a3.73 3.73 0 0 0 3.72-3.72v-7.1c0-.8-.65-1.45-1.45-1.45M42.46 3.87c2.22 0 2.33 4.24 2.33 5.08 0 .85-.11 5.09-2.33 5.09-2.21 0-2.32-4.24-2.32-5.08 0-.86.11-5.09 2.32-5.09m0 13.07c1.76 0 3.23-.93 4.14-2.62.71-1.34 1.1-3.2 1.1-5.36s-.39-4.02-1.1-5.37A4.6 4.6 0 0 0 42.46.97c-1.76 0-3.22.93-4.13 2.62-.72 1.35-1.1 3.2-1.1 5.37s.38 4.01 1.1 5.36a4.59 4.59 0 0 0 4.13 2.62"></path>
+                                    <path fill="#000" d="M51.4.49c-.8 0-1.45.65-1.45 1.45v17.78c-1.93.6-5.75 1.13-10.38 1.13h-2.2a1.45 1.45 0 0 0 0 2.9h2.2c2.64 0 7.21-.23 10.38-1.02v4.84a1.45 1.45 0 0 0 2.9 0V1.94c0-.8-.65-1.45-1.45-1.45"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="nav_top">
+                        <ul>
+                            <li><label for="menu_rd1">커뮤니티</label></li>
+                            <li><label for="menu_rd2">스토어</label></li>
+                            <li><label for="menu_rd3">인테리어시공</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="h_top_R">
+                    <div class="search_box">
+                        <!-- 돋보기 -->
+                        <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" preserveAspectRatio="xMidYMid meet"><path d="M22 22l-5-5"></path><circle cx="11" cy="11" r="8"></circle></svg>
+
+                        <input type="text" class="txt_search" placeholder="오늘의집 통합검색">
+
+                        <!-- 카메라 아이콘 -->
+                        <svg class="icon camera" width="24" height="24" fill="none" viewBox="-1 -1 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M7.62.83c-.37 0-.7.22-.84.55l-.96 2.2H1.83C.83 3.58 0 4.4 0 5.42v12.83c0 1.01.82 1.83 1.83 1.83h18.34c1 0 1.83-.82 1.83-1.83V5.42c0-1.02-.82-1.84-1.83-1.84h-4l-.95-2.2a.92.92 0 00-.84-.55H7.62zm7.96 11a4.58 4.58 0 11-9.16 0 4.58 4.58 0 019.16 0z" clip-rule="evenodd"></path></svg>
+                    </div>
+
+                    <div class="h_icon_box">
+                        <svg class="icon search2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" preserveAspectRatio="xMidYMid meet"><path d="M22 22l-5-5"></path><circle cx="11" cy="11" r="8"></circle></svg>
+ 
+                        <div class="h_top_R_R">
+                            <!-- 쇼핑카드 아이콘 -->
+                            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linejoin="round" stroke-width="2" preserveAspectRatio="xMidYMid meet"><path stroke-linecap="round" d="M4 5h18l-2.6 10.5a2 2 0 0 1-2 1.5H8.6a2 2 0 0 1-2-1.5L4 5zm4 15.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 1 1-3 0zm7 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 1 1-3 0z"></path><path d="M1 2h3v3"></path></svg>
+
+                            <div class="member_box">
+                                <ul>
+                                    <li>로그인</li>
+                                    <li>회원가입</li>
+                                </ul>
+                            </div>
+                            
+                            <input type="checkbox" id="btn_write_chk">
+                            <label for="btn_write_chk" class="btn_write">
+                                <span>글쓰기</span>
+                                <svg class="icon_arrow" width="10" height="18" viewBox="0 0 10 18" preserveAspectRatio="xMidYMid meet"><path fill="#FFF" fill-rule="evenodd" d="M9.89 9l.137-.137L1.343.18l-1.37 1.37L7.424 9l-7.451 7.451 1.37 1.37 8.684-8.684L9.89 9z"></path></svg>
+
+                                <div class="carrot ttt"></div>
+                                <div class="text_box ttt"></div>
+                                
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="h_bot">
+            <div class="contents_area h_bot_container">
+                <div class="h_bot_L">
+                    <ul class="h_bot_list h_bot_list1">
+                        <li>홈</li>
+                        <li>사진</li>
+                        <li>집들이</li>
+                        <li>노하우</li>
+                        <li>전문가집들이</li>
+                        <li>셀프가이드</li>
+                        <li>질문과답변</li>
+                        <li>이벤트</li>
+                    </ul>
+    
+                    <ul class="h_bot_list h_bot_list2">
+                        <li>스토어홈</li>
+                        <li>카테고리</li>
+                        <li>신혼가구</li>
+                        <li>베스트</li>
+                        <li>오늘의딜</li>
+                        <li>봄이불 세일</li>
+                        <li>꿀잠매트리스</li>
+                        <li>기획전</li>
+                    </ul>
+    
+                    <ul class="h_bot_list h_bot_list3">
+                        <li>시공홈</li>
+                        <li>시공스토어</li>
+                    </ul>
+                </div>
+
+                <div class="h_bot_R">3D 인테리어</div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="ham_pan_box">
+        <div class="ham_pan">
+            <label for="ham_chk">닫기</label>
+
+            <div class="kwangGo"></div>
+
+            <div class="pan_menu">
+                <div>
+                    <input type="radio" name="pan_rd" id="pan_rd1" checked>
+                    <div class="pan_btn pan_btn1">
+                        <label for="pan_rd1">커뮤니티</label>
+                        <svg class="icon_arrow" width="10" height="18" viewBox="0 0 10 18" preserveAspectRatio="xMidYMid meet"><path fill="#000" fill-rule="evenodd" d="M9.89 9l.137-.137L1.343.18l-1.37 1.37L7.424 9l-7.451 7.451 1.37 1.37 8.684-8.684L9.89 9z"></path></svg>
+                    </div>
+                    <div class="pan_body">
+                        <ul>
+                            <li>홈</li>
+                            <li>사진</li>
+                            <li>집들이</li>
+                            <li>노하우</li>
+                            <li>전문가집들이</li>
+                            <li>셀프가이드</li>
+                            <li>질문과답변</li>
+                            <li>이벤트</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <input type="radio" name="pan_rd" id="pan_rd2">
+                    <div class="pan_btn pan_btn2">
+                        <label for="pan_rd2">스토어</label>
+                        <svg class="icon_arrow" width="10" height="18" viewBox="0 0 10 18" preserveAspectRatio="xMidYMid meet"><path fill="#000" fill-rule="evenodd" d="M9.89 9l.137-.137L1.343.18l-1.37 1.37L7.424 9l-7.451 7.451 1.37 1.37 8.684-8.684L9.89 9z"></path></svg>
+                    </div>
+                    <div class="pan_body">
+                        <ul>
+                            <li>스토어홈</li>
+                            <li>카테고리</li>
+                            <li>신혼가구</li>
+                            <li>베스트</li>
+                            <li>오늘의딜</li>
+                            <li>봄이불 세일</li>
+                            <li>꿀잠매트리스</li>
+                            <li>기획전</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="radio" name="pan_rd" id="pan_rd3">
+                    <div class="pan_btn pan_btn3">
+                        <label for="pan_rd3">인테리어시공</label>
+                        <svg class="icon_arrow" width="10" height="18" viewBox="0 0 10 18" preserveAspectRatio="xMidYMid meet"><path fill="#000" fill-rule="evenodd" d="M9.89 9l.137-.137L1.343.18l-1.37 1.37L7.424 9l-7.451 7.451 1.37 1.37 8.684-8.684L9.89 9z"></path></svg>
+                    </div>
+                    <div class="pan_body">
+                        <ul>
+                            <li>시공홈</li>
+                            <li>시공스토어</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pan_big_adv"></div>
+        </div>
+    </div>
+
+    <main class="container contents_area ">
+        <section class="sec main_banner">
+            <div class="mb_L">
+                <img src="./img/main_banner/main_banner_L.jpg" alt="">
+                <div class="txt_btn_box">
+                    <div class="txt_mb_L">칙칙했던 집 안녕. 질리지 않을 베이직함으로 새롭게.</div>
+                    <div class="btn_mb_L">보러가기</div>
+                </div>
+            </div>
+            <div class="mb_R">
+                <img src="./img/main_banner/main_banner_R1.png" alt="">
+                
+                <img src="./img/main_banner/main_banner_R1_sm.webp" alt="">
+            </div>
+        </section>
+
+        <section class="sec simple_menu">
+            <ul>
+                <li>
+                    <img src="./img/simple_menu/simple_menu1.png" alt="">
+                    <div>쇼핑하기</div>
+                </li>
+                <li>
+                    <img src="./img/simple_menu/simple_menu2.png" alt="">
+                    <div>신혼가구</div>
+                </li>
+                <li>
+                    <img src="./img/simple_menu/simple_menu3.png" alt="">
+                    <div>평수별집구경</div>
+                </li>
+                <li>
+                    <img src="./img/simple_menu/simple_menu4.png" alt="">
+                    <div>공간별사진</div>
+                </li>
+                <li>
+                    <img src="./img/simple_menu/simple_menu5.png" alt="">
+                    <div>시공간편상담</div>
+                </li>
+                <li>
+                    <img src="./img/simple_menu/simple_menu6.png" alt="">
+                    <div>시공업체찾기</div>
+                </li>
+                <li>
+                    <img src="./img/simple_menu/simple_menu7.png" alt="">
+                    <div>가이드북</div>
+                </li>
+                <li>
+                    <img src="./img/simple_menu/simple_menu8.png" alt="">
+                    <div>질문과답변</div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="sec today_story" id="today_story">
+            <div class="sec_header">
+                <div class="sec_title">오늘의 스토리</div>
+            </div>
+            <div class="sec_body">
+                <ul class="ts_item_box">
+                    <li class="ts_item">
+                        <div class="ts_img_box">
+                            <img src="./img/today_story/today_story1.jpg" alt="">
+                        </div>
+                        <div class="ts_desc">평범한 구조의 아파트지마나 좀 더 색다르게</div>
+                    </li>
+                    <li class="ts_item">
+                        <div class="ts_img_box">
+                            <img src="./img/today_story/today_story2.jpg" alt="">
+                        </div>
+                        <div class="ts_desc">의도와 비의도가 만들어낸 사랑스런 행복주택</div>
+                    </li>
+                    <li class="ts_item">
+                        <div class="ts_img_box">
+                            <img src="./img/today_story/today_story3.jpg" alt="">
+                        </div>
+                        <div class="ts_desc">고요히 글을 쓰고 쉴 수 있는 나의 제주집</div>
+                    </li>
+                    <li class="ts_item">
+                        <div class="ts_list">집들이</div>    
+                        <div class="ts_list">전문가 집들이</div>    
+                        <div class="ts_list">노하우</div>    
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="sec category">
+            <div class="sec_header">
+                <div class="sec_title">카테고리별 상품 찾기</div>
+            </div>
+            <div class="sec_body">
+                <ul class="cate_item_box">
+                    <li>
+                        <div class="cate_img_box">
+                            <img src="./img/category/category1.png" alt="">
+                        </div>
+                        <div class="cate_item_title">가구</div>
+                    </li>
+                    <li>
+                        <div class="cate_img_box">
+                            <img src="./img/category/category2.png" alt="">
+                        </div>
+                        <div class="cate_item_title">패브릭</div>
+                    </li>
+                    <li>
+                        <div class="cate_img_box">
+                            <img src="./img/category/category3.png" alt="">
+                        </div>
+                        <div class="cate_item_title">홈데코</div>
+                    </li>
+                    <li>
+                        <div class="cate_img_box">
+                            <img src="./img/category/category4.png" alt="">
+                        </div>
+                        <div class="cate_item_title">수납/정리</div>
+                    </li>
+                    <li>
+                        <div class="cate_img_box">
+                            <img src="./img/category/category5.png" alt="">
+                        </div>
+                        <div class="cate_item_title">생활용품</div>
+                    </li>
+                    <li>
+                        <div class="cate_img_box">
+                            <img src="./img/category/category6.jpg" alt="">
+                        </div>
+                        <div class="cate_item_title">가전</div>
+                    </li>
+                    <li>
+                        <div class="cate_img_box">
+                            <img src="./img/category/category7.png" alt="">
+                        </div>
+                        <div class="cate_item_title">주방</div>
+                    </li>
+                    <li>
+                        <div class="cate_img_box">
+                            <img src="./img/category/category8.png" alt="">
+                        </div>
+                        <div class="cate_item_title">반려동물</div>
+                    </li>
+                    <li>
+                        <div class="cate_img_box">
+                            <img src="./img/category/category9.png" alt="">
+                        </div>
+                        <div class="cate_item_title">그릇/홈세트</div>
+                    </li>
+                    <li>
+                        <div class="cate_img_box">
+                            <img src="./img/category/category10.png" alt="">
+                        </div>
+                        <div class="cate_item_title">조명</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="sec today_deal">
+            <div class="sec_header">
+                <div class="sec_title">오늘의 딜</div>
+                <div class="sec_show_more">더보기</div>
+            </div>
+            <div class="sec_body">
+                <ul class="td_item_box">
+                    <li class="td_item">
+                        <div class="td_img_box">
+                            <img src="./img/today_deal/today_deal1.jpg" alt=""> 
+                        </div>
+                        <div class="td_desc">
+                            <div class="d_day">6일남음</div>
+                            <div class="brand">잉글랜더</div>
+                            <div class="td_item_title">잉글랜더 거실가구 베스트 / 아쿠아텍스 소파, 거실장</div>
+                            <div class="td_price"><span>60%</span> 199,000 외</div>
+                        </div>
+                    </li>
+                    <li class="td_item">
+                        <div class="td_img_box">
+                            <img src="./img/today_deal/today_deal2.jpg" alt=""> 
+                        </div>
+                        <div class="td_desc">
+                            <div class="d_day">6일남음</div>
+                            <div class="brand">발뮤다</div>
+                            <div class="td_item_title">[리퍼] 발뮤다 가습기/선풍기/서큘레이터 S급 리퍼 한정수량</div>
+                            <div class="td_price"><span>60%</span> 149,000 외</div>
+                        </div>
+                    </li>
+                    <li class="td_item">
+                        <div class="td_img_box">
+                            <img src="./img/today_deal/today_deal3.jpg" alt=""> 
+                        </div>
+                        <div class="td_desc">
+                            <div class="d_day">6일남음</div>
+                            <div class="brand">삼삼텍스타일</div>
+                            <div class="td_item_title">화이트 암막커튼 나비주름 호텔식 맞춤제작/동대문 매장</div>
+                            <div class="td_price"><span>24%</span> 24,000 외</div>
+                        </div>
+                    </li>
+                    <li class="td_item">
+                        <div class="td_img_box">
+                            <img src="./img/today_deal/today_deal4.jpg" alt=""> 
+                        </div>
+                        <div class="td_desc">
+                            <div class="d_day">6일남음</div>
+                            <div class="brand">사라반</div>
+                            <div class="td_item_title">브런치/ 스테이크접시! 활용도 좋은 빅사이즈 접시 70종</div>
+                            <div class="td_price"><span>66%</span> 49,000 외</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="sec today_pic">
+            <div class="sec_header">
+                <div class="sec_title">오늘의 인기사진</div>
+                <div class="sec_show_more">더보기</div>
+            </div>
+            <div class="sec_body">
+                <ul class="tp_item_box">
+                    <li>
+                        <img src="./img/today_pic/today_pic1.webp" alt="">
+                        <div class="tp_brand">mydayss</div>
+                        <div class="tp_rank">1</div>
+                    </li>
+                    <li>
+                        <img src="./img/today_pic/today_pic2.webp" alt="">
+                        <div class="tp_brand">mydayss</div>
+                        <div class="tp_rank">2</div>
+                    </li>
+                    <li>
+                        <img src="./img/today_pic/today_pic3.webp" alt="">
+                        <div class="tp_brand">mydayss</div>
+                        <div class="tp_rank">3</div>
+                    </li>
+                    <li>
+                        <img src="./img/today_pic/today_pic4.webp" alt="">
+                        <div class="tp_brand">mydayss</div>
+                    </li>
+                    <li>
+                        <img src="./img/today_pic/today_pic5.webp" alt="">
+                        <div class="tp_brand">mydayss</div>
+                    </li>
+                    <li>
+                        <img src="./img/today_pic/today_pic6.webp" alt="">
+                        <div class="tp_brand">mydayss</div>
+                    </li>
+                    <li>
+                        <img src="./img/today_pic/today_pic7.webp" alt="">
+                        <div class="tp_brand">mydayss</div>
+                    </li>
+                    <li>
+                        <img src="./img/today_pic/today_pic8.webp" alt="">
+                        <div class="tp_brand">mydayss</div>
+                    </li>
+                </ul>
+            </div>
+        </section>    
+
+        <section class="sec adv">
+            <img src="./img/banner1.webp" alt="">
+            <img src="./img/banner1_sm.webp" alt="">
+
+            <div class="adv_box adv_1"></div>
+            <div class="adv_box adv_2"></div>
+        </section>
+    </main>
+    <footer class="footer"></footer>
+</div>
+</body>
+</html>
