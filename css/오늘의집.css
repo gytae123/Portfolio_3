@@ -307,6 +307,7 @@ input[name="pan_rd"]:checked ~ .pan_body {
     transform: translateX(-50%);
 
     user-select: none;
+    z-index: 9;
 }
 #btn_write_chk,
 .ttt {
